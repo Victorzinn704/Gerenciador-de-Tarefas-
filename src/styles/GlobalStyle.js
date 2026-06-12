@@ -10,12 +10,15 @@ const GlobalStyle = createGlobalStyle`
     min-width: 320px;
     background: ${({ theme }) => theme.colors.background};
     color: ${({ theme }) => theme.colors.text};
-    font-family:
-      Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: "IBM Plex Sans", Arial, sans-serif;
+    transition:
+      background 0.2s ease,
+      color 0.2s ease;
   }
 
   button,
-  input {
+  input,
+  textarea {
     font: inherit;
   }
 
@@ -24,7 +27,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   button:focus-visible,
-  input:focus-visible {
+  input:focus-visible,
+  textarea:focus-visible {
     outline: 3px solid ${({ theme }) => theme.colors.focus};
     outline-offset: 2px;
   }

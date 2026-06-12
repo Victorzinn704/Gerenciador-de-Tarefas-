@@ -2,196 +2,223 @@ import styled from 'styled-components'
 
 export const Page = styled.main`
   min-height: 100vh;
-  padding: 48px 20px;
+  background: ${({ theme }) => theme.colors.background};
 `
 
-export const Container = styled.section`
-  width: min(100%, 720px);
-  margin: 0 auto;
-`
-
-export const Painel = styled.section`
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  border-radius: 8px;
+export const AppShell = styled.section`
+  min-height: 100vh;
   background: ${({ theme }) => theme.colors.surface};
-  box-shadow: ${({ theme }) => theme.colors.shadow};
+`
+
+export const Workbench = styled.div`
+  display: grid;
+  grid-template-columns: 304px minmax(0, 1fr);
+  min-height: calc(100vh - 58px);
+
+  @media (max-width: 860px) {
+    grid-template-columns: 1fr;
+  }
+`
+
+export const ControlPanel = styled.aside`
+  border-right: 1px solid ${({ theme }) => theme.colors.borderSoft};
+  background: ${({ theme }) => theme.colors.surfaceSoft};
   padding: 24px;
 
-  @media (max-width: 560px) {
-    padding: 18px;
+  @media (max-width: 860px) {
+    border-right: 0;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.borderSoft};
   }
 `
 
-export const Form = styled.form`
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 12px;
+export const TaskPanel = styled.section`
+  padding: 28px 34px;
 
-  @media (max-width: 560px) {
-    grid-template-columns: 1fr;
+  @media (max-width: 640px) {
+    padding: 22px 18px;
   }
 `
 
-export const InputTarefa = styled.input`
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  border-radius: 8px;
-  background: ${({ theme }) => theme.colors.surfaceSoft};
+export const SidebarBlock = styled.section`
+  & + & {
+    margin-top: 28px;
+    padding-top: 22px;
+    border-top: 1px solid ${({ theme }) => theme.colors.border};
+  }
+`
+
+export const SectionEyebrow = styled.span`
+  display: block;
+  margin-bottom: 8px;
+  color: ${({ theme }) => theme.colors.primary};
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+`
+
+export const SidebarTitle = styled.h2`
+  margin: 0 0 14px;
   color: ${({ theme }) => theme.colors.text};
-  min-height: 48px;
-  padding: 0 14px;
-
-  &::placeholder {
-    color: ${({ theme }) => theme.colors.muted};
-  }
+  font-size: 1rem;
+  font-weight: 600;
 `
 
-export const SubmitButton = styled.button`
-  border: 0;
-  border-radius: 8px;
-  background: ${({ theme }) => theme.colors.primary};
-  color: ${({ theme }) => theme.colors.primaryText};
-  min-height: 48px;
-  padding: 0 18px;
-  font-weight: 700;
-  transition:
-    filter 0.2s ease,
-    transform 0.2s ease;
-
-  &:hover {
-    filter: brightness(1.05);
-    transform: translateY(-1px);
-  }
+export const SectionTitle = styled.h2`
+  margin: 0;
+  color: ${({ theme }) => theme.colors.text};
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.25;
 `
 
-export const Resumo = styled.div`
+export const ProgressPanel = styled.section`
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid ${({ theme }) => theme.colors.border};
+`
+
+export const ContentGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin: 20px 0;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 24px;
+  max-width: 1180px;
 
-  @media (max-width: 560px) {
+  @media (max-width: 1080px) {
     grid-template-columns: 1fr;
   }
 `
 
-export const ResumoItem = styled.div`
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  border-radius: 8px;
-  background: ${({ theme }) => theme.colors.surfaceSoft};
-  padding: 14px;
-
-  strong {
-    display: block;
-    color: ${({ theme }) => theme.colors.primary};
-    font-size: 1.6rem;
-    line-height: 1;
-  }
+export const ProgressHeader = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: ${({ theme }) => theme.colors.text};
+  font-weight: 600;
 
   span {
     color: ${({ theme }) => theme.colors.muted};
-    font-size: 0.9rem;
   }
 `
 
-export const FilterGroup = styled.div`
+export const ProgressTrack = styled.div`
+  height: 6px;
+  margin: 12px 0 16px;
+  background: ${({ theme }) => theme.colors.surfaceStrong};
+`
+
+export const ProgressFill = styled.div`
+  width: ${({ $percentual }) => `${$percentual}%`};
+  height: 100%;
+  background: ${({ theme }) => theme.colors.primary};
+  transition: width 0.25s ease;
+`
+
+export const ResumoLinha = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  background: ${({ theme }) => theme.colors.surface};
+`
+
+export const ResumoItem = styled.div`
+  padding: 12px;
+
+  & + & {
+    border-left: 1px solid ${({ theme }) => theme.colors.borderSoft};
+  }
+`
+
+export const StatValue = styled.strong`
+  display: block;
+  color: ${({ theme }) => theme.colors.text};
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 1.12rem;
+  font-weight: 500;
+`
+
+export const StatLabel = styled.span`
+  display: block;
+  margin-top: 3px;
+  color: ${({ theme }) => theme.colors.muted};
+  font-size: 0.76rem;
+`
+
+export const TaskHeader = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 16px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 900px;
+  margin-bottom: 20px;
+`
+
+export const TaskTotal = styled.span`
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  color: ${({ theme }) => theme.colors.muted};
+  padding: 5px 9px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.75rem;
+  white-space: nowrap;
+`
+
+export const FilterGroup = styled.div`
+  display: grid;
+  gap: 2px;
 `
 
 export const FilterButton = styled.button`
-  border: 1px solid
-    ${({ $ativo, theme }) =>
-      $ativo ? theme.colors.primary : theme.colors.border};
-  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 34px;
+  border: 0;
+  border-left: 2px solid
+    ${({ $ativo, theme }) => ($ativo ? theme.colors.primary : 'transparent')};
   background: ${({ $ativo, theme }) =>
-    $ativo ? theme.colors.primary : theme.colors.surface};
+    $ativo ? theme.colors.surface : 'transparent'};
   color: ${({ $ativo, theme }) =>
-    $ativo ? theme.colors.primaryText : theme.colors.text};
-  min-height: 40px;
-  padding: 0 14px;
-  font-weight: 700;
-  transition:
-    border-color 0.2s ease,
-    background 0.2s ease,
-    color 0.2s ease;
+    $ativo ? theme.colors.text : theme.colors.muted};
+  padding: 0 10px;
+  font-weight: 500;
+  text-align: left;
 
   &:hover {
-    border-color: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.text};
+    background: ${({ theme }) => theme.colors.surface};
+  }
+`
+
+export const TaskTableHead = styled.div`
+  display: grid;
+  grid-template-columns: 86px minmax(0, 1fr) auto;
+  gap: 14px;
+  max-width: 900px;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
+  color: ${({ theme }) => theme.colors.muted};
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  padding: 0 12px 9px;
+  text-transform: uppercase;
+
+  @media (max-width: 640px) {
+    display: none;
   }
 `
 
 export const ListaTarefas = styled.ul`
   display: grid;
-  gap: 10px;
+  max-width: 900px;
   margin: 0;
   padding: 0;
   list-style: none;
 `
 
-export const TaskItem = styled.li`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  border-radius: 8px;
-  background: ${({ $concluida, theme }) =>
-    $concluida ? theme.colors.surfaceSoft : theme.colors.surface};
-  padding: 12px;
-
-  @media (max-width: 560px) {
-    align-items: stretch;
-    flex-direction: column;
-  }
-`
-
-export const TarefaContent = styled.label`
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  min-width: 0;
-`
-
-export const CheckBox = styled.input`
-  width: 18px;
-  height: 18px;
-  accent-color: ${({ theme }) => theme.colors.success};
-  flex: 0 0 auto;
-`
-
-export const TarefaTexto = styled.span`
-  color: ${({ $concluida, theme }) =>
-    $concluida ? theme.colors.muted : theme.colors.text};
-  overflow-wrap: anywhere;
-  text-decoration: ${({ $concluida }) =>
-    $concluida ? 'line-through' : 'none'};
-`
-
-export const RemoverButton = styled.button`
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  border-radius: 8px;
-  background: transparent;
-  color: ${({ theme }) => theme.colors.danger};
-  min-height: 38px;
-  padding: 0 12px;
-  font-weight: 700;
-  transition:
-    border-color 0.2s ease,
-    background 0.2s ease;
-
-  &:hover {
-    border-color: ${({ theme }) => theme.colors.danger};
-    background: ${({ theme }) => theme.colors.surfaceSoft};
-  }
-`
-
 export const EmptyState = styled.p`
+  max-width: 900px;
   margin: 0;
-  border: 1px dashed ${({ theme }) => theme.colors.border};
-  border-radius: 8px;
+  border-top: 1px solid ${({ theme }) => theme.colors.border};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
   color: ${({ theme }) => theme.colors.muted};
-  padding: 22px;
-  text-align: center;
+  padding: 24px 12px;
 `

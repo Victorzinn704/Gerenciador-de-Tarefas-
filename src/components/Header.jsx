@@ -1,19 +1,26 @@
+import { ListChecks, Moon, Sun } from 'lucide-react'
 import {
+  BrandMark,
   HeaderContainer,
   HeaderText,
-  Subtitle,
   ThemeButton,
+  ThemeButtonText,
   Title,
 } from '../styles/components/Header.styles'
 
 function Header({ temaAtual, alternarTema }) {
   const proximoTema = temaAtual === 'claro' ? 'escuro' : 'claro'
+  const ThemeIcon = temaAtual === 'claro' ? Moon : Sun
 
   return (
     <HeaderContainer>
       <HeaderText>
-        <Title>Lista de Tarefas</Title>
-        <Subtitle>Organize suas tarefas por status.</Subtitle>
+        <BrandMark aria-hidden="true">
+          <ListChecks size={20} strokeWidth={2.2} />
+        </BrandMark>
+        <div>
+          <Title>Lista de Tarefas</Title>
+        </div>
       </HeaderText>
 
       <ThemeButton
@@ -21,7 +28,8 @@ function Header({ temaAtual, alternarTema }) {
         onClick={alternarTema}
         aria-label={`Ativar tema ${proximoTema}`}
       >
-        Tema {proximoTema}
+        <ThemeIcon size={18} strokeWidth={2.1} />
+        <ThemeButtonText>Tema {proximoTema}</ThemeButtonText>
       </ThemeButton>
     </HeaderContainer>
   )
