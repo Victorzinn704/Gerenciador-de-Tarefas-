@@ -4,6 +4,12 @@ Aplicacao academica desenvolvida com React, JavaScript e styled-components.
 
 O projeto permite organizar tarefas por data, horario e status. A interface usa tema claro e escuro, calendario mensal, historico de movimentacoes e classificacao visual por periodo do dia.
 
+## Acesso
+
+Aplicacao publicada no GitHub Pages:
+
+https://victorzinn704.github.io/Gerenciador-de-Tarefas-/
+
 ## Imagens do projeto
 
 ### Desktop
@@ -79,6 +85,12 @@ npm run build
 ```
 
 Tambem existe um workflow do GitHub Actions em `.github/workflows/quality.yml`.
+
+## Publicacao
+
+O projeto e publicado automaticamente no GitHub Pages pelo workflow `.github/workflows/pages.yml`.
+
+A cada envio para a branch `main`, o GitHub executa os testes, gera o build de producao e publica o conteudo da pasta `dist`.
 
 ## Estrutura principal
 
