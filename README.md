@@ -131,6 +131,7 @@ Documentos complementares:
 - `docs/ESTRUTURA.md`
 - `docs/DECISOES-TECNICAS.md`
 - `docs/TESTES.md`
+- `docs/MATRIZ-DE-TESTES-E-EVIDENCIAS.md`
 - `docs/VALIDACAO-LOCAL.md`
 - `docs/AUDITORIA-DOCUMENTAL-2026-06-16.md`
 

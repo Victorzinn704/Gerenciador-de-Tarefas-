@@ -10,6 +10,7 @@ Este indice organiza os documentos do projeto para leitura tecnica, apresentacao
 | `ESTRUTURA.md` | Organizacao do codigo, responsabilidades por pasta e fluxo de dados. |
 | `DECISOES-TECNICAS.md` | Decisoes adotadas, alternativas rejeitadas e motivo de cada escolha. |
 | `TESTES.md` | Estrategia de testes e comandos de validacao. |
+| `MATRIZ-DE-TESTES-E-EVIDENCIAS.md` | Ligacao entre casos de uso, regras, arquivos, testes, evidencias e limites. |
 | `VALIDACAO-LOCAL.md` | Resultado da validacao feita antes da publicacao documental. |
 | `AUDITORIA-DOCUMENTAL-2026-06-16.md` | Raio-x documental e proximos pontos de evolucao. |
 | `screenshots/desktop-claro.png` | Evidencia visual da interface em desktop claro. |
