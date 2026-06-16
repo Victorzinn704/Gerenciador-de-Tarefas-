@@ -52,3 +52,16 @@ npm run build
 ```
 
 Esses comandos confirmam que o codigo esta padronizado, que as regras principais funcionam e que a aplicacao gera uma versao de producao.
+
+## Ultima Validacao Registrada
+
+Data: 2026-06-16.
+
+Resultado:
+
+- `npm ci` passou sem vulnerabilidades reportadas;
+- `npm run lint` passou;
+- `npm run test` passou com 3 arquivos de teste e 11 testes;
+- `npm run build` passou.
+
+Detalhes em `docs/VALIDACAO-LOCAL.md`.

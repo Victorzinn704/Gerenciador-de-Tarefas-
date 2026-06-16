@@ -91,3 +91,33 @@ src/test/renderWithTheme.jsx
 `App.jsx` integra os componentes e passa os dados necessarios para cada parte da interface.
 
 Ele nao concentra todas as regras. A regra principal fica em `useTaskManager.js` e as funcoes de horario ficam em `tarefaUtils.js`.
+
+## Fluxo De Dados
+
+```text
+Usuario
+  -> componentes de entrada
+  -> useTaskManager
+  -> reducer
+  -> tarefas/historico/tema/data
+  -> componentes de exibicao
+  -> localStorage
+```
+
+## Responsabilidades Principais
+
+| Arquivo | Responsabilidade |
+| --- | --- |
+| `src/App.jsx` | Monta a tela e conecta componentes ao estado. |
+| `src/hooks/useTaskManager.js` | Centraliza estado, acoes, historico e persistencia. |
+| `src/utils/tarefaUtils.js` | Normaliza datas, horarios e periodos. |
+| `src/components/FormularioTarefa.jsx` | Recebe dados de nova tarefa e valida campos obrigatorios. |
+| `src/components/TarefaItem.jsx` | Exibe, edita, conclui e remove uma tarefa. |
+| `src/components/Calendario.jsx` | Controla selecao de dia e navegacao de mes. |
+| `src/components/HistoricoTarefas.jsx` | Mostra os eventos registrados. |
+
+## Regra De Manutencao
+
+Novas regras de negocio devem entrar primeiro em `useTaskManager.js` ou `tarefaUtils.js`.
+
+Componentes devem apenas coletar entrada, exibir saida e disparar acoes. Isso evita duplicacao de regra entre formulario, lista e calendario.

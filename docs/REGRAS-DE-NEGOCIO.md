@@ -13,6 +13,12 @@ Uma tarefa precisa ter:
 
 O sistema nao adiciona uma tarefa sem esses campos principais.
 
+Arquivos relacionados:
+
+- `src/components/FormularioTarefa.jsx`
+- `src/hooks/useTaskManager.js`
+- `src/components/FormularioTarefa.test.jsx`
+
 ## Classificacao por periodo
 
 A classificacao por periodo e feita de forma automatica a partir do horario.
@@ -22,6 +28,13 @@ A classificacao por periodo e feita de forma automatica a partir do horario.
 | Manha | 04h00 | 11h59 | Vermelho |
 | Tarde | 12h00 | 17h59 | Verde |
 | Noite | 18h00 | 03h59 | Azul |
+
+Arquivos relacionados:
+
+- `src/utils/tarefaUtils.js`
+- `src/utils/tarefaUtils.test.js`
+- `src/components/PeriodoPreview.jsx`
+- `src/components/TarefaItem.jsx`
 
 ## Justificativa da regra
 
@@ -61,8 +74,22 @@ O historico registra as movimentacoes principais:
 
 Tarefas removidas saem da lista principal, mas continuam registradas no historico.
 
+Arquivo relacionado:
+
+- `src/hooks/useTaskManager.js`
+
 ## Persistencia
 
 As informacoes sao salvas no `localStorage`.
 
 Isso permite manter os dados no navegador mesmo apos atualizar a pagina.
+
+Arquivo relacionado:
+
+- `src/hooks/useTaskManager.js`
+
+## Limites
+
+- O historico registra eventos, mas nao permite restaurar automaticamente uma tarefa removida.
+- A persistencia e local ao navegador.
+- O projeto nao possui validacao de data futura ou recorrencia de tarefas.
