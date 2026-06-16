@@ -2,6 +2,8 @@
 
 O projeto usa Vitest e Testing Library.
 
+A matriz que liga comportamento, regra, arquivo, teste e evidencia fica em `docs/MATRIZ-DE-TESTES-E-EVIDENCIAS.md`.
+
 ## Objetivo dos testes
 
 Os testes verificam pontos importantes da aplicacao:

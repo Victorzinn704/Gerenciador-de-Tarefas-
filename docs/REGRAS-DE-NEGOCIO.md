@@ -2,6 +2,8 @@
 
 Este documento descreve as regras usadas pela aplicacao.
 
+Para ver quais regras possuem teste, evidencia visual ou limite declarado, consulte `docs/MATRIZ-DE-TESTES-E-EVIDENCIAS.md`.
+
 ## Cadastro de tarefa
 
 Uma tarefa precisa ter:
