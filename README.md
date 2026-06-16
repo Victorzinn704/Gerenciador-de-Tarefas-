@@ -10,6 +10,19 @@ Aplicacao publicada no GitHub Pages:
 
 https://victorzinn704.github.io/Gerenciador-de-Tarefas-/
 
+## Estado validado
+
+Validacao local registrada em 2026-06-16:
+
+```bash
+npm ci
+npm run lint
+npm run test
+npm run build
+```
+
+Resultado: lint sem erro, 3 arquivos de teste aprovados, 11 testes aprovados e build de producao gerado.
+
 ## Imagens do projeto
 
 ### Desktop
@@ -55,6 +68,11 @@ Esta regra foi definida para deixar a agenda simples e previsivel. As referencia
 - lucide-react
 
 ## Como executar
+
+Requisitos:
+
+- Node.js 22 ou superior;
+- npm.
 
 ```bash
 npm install
@@ -107,10 +125,22 @@ src/
 
 Documentos complementares:
 
+- `docs/INDEX.md`
+- `docs/GUIA-DE-USO.md`
 - `docs/REGRAS-DE-NEGOCIO.md`
-- `docs/TESTES.md`
 - `docs/ESTRUTURA.md`
+- `docs/DECISOES-TECNICAS.md`
+- `docs/TESTES.md`
+- `docs/VALIDACAO-LOCAL.md`
+- `docs/AUDITORIA-DOCUMENTAL-2026-06-16.md`
 
 ## Observacao sobre dados
 
 Os dados sao salvos no `localStorage` do navegador. O projeto nao utiliza backend, banco de dados ou autenticacao.
+
+## Limites conhecidos
+
+- Os dados nao sincronizam entre dispositivos.
+- Limpar os dados do navegador pode apagar as tarefas salvas.
+- O projeto nao possui login, API ou banco de dados.
+- O objetivo e demonstrar uma agenda local com regras de horario, historico e tema visual.
